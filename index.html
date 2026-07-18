@@ -86,7 +86,6 @@
                 <a href="#experiences" class="hover:text-blueprint-blue transition-colors">PARCOURS</a>
                 <a href="#projets" class="hover:text-blueprint-blue transition-colors">PROJETS</a>
                 <a href="#certifications" class="hover:text-blueprint-blue transition-colors">CERTIFICATIONS</a>
-                <a href="#faq" class="hover:text-blueprint-blue transition-colors">FAQ</a>
                 <a href="#formation" class="hover:text-blueprint-blue transition-colors">FORMATION</a>
                 <a href="#distinctions" class="hover:text-blueprint-blue transition-colors">DISTINCTIONS</a>
                 <a href="#contact" class="hover:text-blueprint-blue transition-colors">CONTACT</a>
@@ -112,7 +111,6 @@
             <a @click="mobileMenu = false" href="#experiences" class="block py-1 hover:text-blueprint-blue">Parcours</a>
             <a @click="mobileMenu = false" href="#projets" class="block py-1 hover:text-blueprint-blue">Projets</a>
             <a @click="mobileMenu = false" href="#certifications" class="block py-1 hover:text-blueprint-blue">Certifications</a>
-            <a @click="mobileMenu = false" href="#faq" class="block py-1 hover:text-blueprint-blue">FAQ Recruteurs</a>
             <a @click="mobileMenu = false" href="#formation" class="block py-1 hover:text-blueprint-blue">Formation</a>
             <a @click="mobileMenu = false" href="#distinctions" class="block py-1 hover:text-blueprint-blue">Distinctions</a>
             <a @click="mobileMenu = false" href="#contact" class="block py-1 hover:text-blueprint-blue">Contact</a>
@@ -624,196 +622,126 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="py-20 border-b border-slate-100">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center max-w-xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold font-display text-navy">Questions fréquentes</h2>
-                <p class="text-slate-500 text-sm mt-3">Des réponses directes et pragmatiques pour faciliter nos premiers échanges.</p>
-            </div>
-
-            <div class="space-y-4">
-
-                <div class="border border-slate-200 rounded-lg overflow-hidden bg-white">
-                    <button @click="activeFaq = (activeFaq === 1 ? null : 1)" class="w-full text-left px-6 py-4 flex justify-between items-center font-display font-bold text-slate-800 hover:bg-slate-50 transition-colors" :aria-expanded="activeFaq === 1">
-                        <span>Pourquoi recruter Abdoul Aziz plutôt qu'un autre ?</span>
-                        <svg class="w-5 h-5 text-blueprint-blue transform transition-transform duration-300 shrink-0 ml-4" :class="activeFaq === 1 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div x-show="activeFaq === 1" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="px-6 pb-5 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        <p class="mb-3">Mon profil combine une double expertise à la fois robuste et moderne : une solide formation en <strong>Génie Industriel classique</strong> (méthodes, Lean, AMDEC, gestion de production) et une maîtrise active de la <strong>digitalisation</strong> (Python, IA, RAG local).</p>
-                        <p>Sur le terrain, je ne me contente pas d'appliquer des théories : je m'intègre aux équipes opérationnelles, j'analyse les freins réels et je déploie des solutions pragmatiques et automatisées qui génèrent des gains de temps et de fiabilité mesurables.</p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-lg overflow-hidden bg-white">
-                    <button @click="activeFaq = (activeFaq === 2 ? null : 2)" class="w-full text-left px-6 py-4 flex justify-between items-center font-display font-bold text-slate-800 hover:bg-slate-50 transition-colors" :aria-expanded="activeFaq === 2">
-                        <span>Quelle est votre plus belle réussite sur le terrain ?</span>
-                        <svg class="w-5 h-5 text-blueprint-blue transform transition-transform duration-300 shrink-0 ml-4" :class="activeFaq === 2 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div x-show="activeFaq === 2" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="px-6 pb-5 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        <p class="mb-3">C'est le développement et le déploiement de l'outil <strong>ChatMaint</strong> lors de mon PFE chez <strong>Valeo Vision Tanger</strong>.</p>
-                        <p>En connectant un système RAG local à l'historique des pannes et guides de maintenance, j'ai permis aux techniciens d'accéder plus rapidement au bon diagnostic lors d'une panne. Cet outil a contribué à la fiabilisation opérationnelle de l'atelier.</p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-lg overflow-hidden bg-white">
-                    <button @click="activeFaq = (activeFaq === 3 ? null : 3)" class="w-full text-left px-6 py-4 flex justify-between items-center font-display font-bold text-slate-800 hover:bg-slate-50 transition-colors" :aria-expanded="activeFaq === 3">
-                        <span>Comment gérez-vous un conflit d'équipe dans un atelier ?</span>
-                        <svg class="w-5 h-5 text-blueprint-blue transform transition-transform duration-300 shrink-0 ml-4" :class="activeFaq === 3 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div x-show="activeFaq === 3" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="px-6 pb-5 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        <p class="mb-3">La clé réside dans la présence physique sur le terrain (<strong>Gemba</strong>) et l'inclusion immédiate des personnes concernées dans le processus de décision.</p>
-                        <p>Pour désamorcer une tension, j'écoute d'abord chaque partie séparément, je reformule le désaccord de façon factuelle, puis je cherche une solution avec l'équipe plutôt que de l'imposer. Co-construire un standard avec les personnes qui l'appliquent au quotidien garantit une adhésion durable.</p>
-                    </div>
-                </div>
-
-                <div class="border border-slate-200 rounded-lg overflow-hidden bg-white">
-                    <button @click="activeFaq = (activeFaq === 4 ? null : 4)" class="w-full text-left px-6 py-4 flex justify-between items-center font-display font-bold text-slate-800 hover:bg-slate-50 transition-colors" :aria-expanded="activeFaq === 4">
-                        <span>Êtes-vous mobile internationalement ?</span>
-                        <svg class="w-5 h-5 text-blueprint-blue transform transition-transform duration-300 shrink-0 ml-4" :class="activeFaq === 4 ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div x-show="activeFaq === 4" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="px-6 pb-5 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100">
-                        <p class="mb-2">Oui. Mon parcours entre le Burkina Faso et le Maroc m'a déjà habitué à évoluer dans des contextes différents, et je suis disponible immédiatement pour un poste au Maroc ou à l'international.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- FORMATION & VIE ASSOCIATIVE -->
     <section id="formation" class="py-20">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="max-w-6xl mx-auto px-6 space-y-16">
 
-                <div class="lg:col-span-7 space-y-8">
-                    <h2 class="text-3xl font-bold font-display text-navy">Diplômes &amp; Cursus</h2>
-
-                    <div class="space-y-4">
-
-                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-lg flex items-center gap-4">
-                            <div class="edu-logo"><img src="assets/logos/fstt.png" alt="Logo FST Tanger" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
-                                    <h3 class="font-display font-bold text-sm text-navy">Diplôme d'Ingénieur — Génie Industriel</h3>
-                                    <span class="font-mono text-xs text-blueprint-blue font-bold whitespace-nowrap">2024 – 2026</span>
-                                </div>
-                                <p class="text-xs text-slate-500">FST Tanger</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-lg flex items-center gap-4">
-                            <div class="edu-logo"><img src="assets/logos/fstt.png" alt="Logo FST Tanger" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
-                                    <h3 class="font-display font-bold text-sm text-navy">Licence — Génie Méca. Design Ind. &amp; Productique</h3>
-                                    <span class="font-mono text-xs text-blueprint-blue font-bold whitespace-nowrap">2023 – 2024</span>
-                                </div>
-                                <p class="text-xs text-slate-500">FST Tanger</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-lg flex items-center gap-4">
-                            <div class="edu-logo"><img src="assets/logos/fstt.png" alt="Logo FST Tanger" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
-                                    <h3 class="font-display font-bold text-sm text-navy">DEUST — Génie Électrique, Génie Mécanique</h3>
-                                    <span class="font-mono text-xs text-blueprint-blue font-bold whitespace-nowrap">2021 – 2023</span>
-                                </div>
-                                <p class="text-xs text-slate-500">FST Tanger</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 border border-slate-200 p-5 rounded-lg flex items-center gap-4">
-                            <div class="edu-logo"><img src="assets/logos/ltn-asl.png" alt="Logo Lycée Technique National/ASL" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-start flex-wrap gap-2 mb-1">
-                                    <h3 class="font-display font-bold text-sm text-navy">Baccalauréat Fabrication Mécanique</h3>
-                                    <span class="font-mono text-xs text-blueprint-blue font-bold whitespace-nowrap">2021</span>
-                                </div>
-                                <p class="text-xs text-slate-500">Lycée Technique National/ASL, Ouagadougou</p>
-                            </div>
-                        </div>
-
-                    </div>
+            <!-- Diplômes & Cursus — mis en avant -->
+            <div>
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="font-mono text-xs text-blueprint-blue tracking-widest uppercase">Parcours académique</span>
+                    <span class="flex-1 h-px bg-slate-200"></span>
                 </div>
+                <h2 class="text-3xl md:text-4xl font-bold font-display text-navy mb-8">Diplômes &amp; Cursus</h2>
 
-                <div class="lg:col-span-5 space-y-8">
-                    <h2 class="text-3xl font-bold font-display text-navy">Vie associative &amp; Engagement</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                    <div class="space-y-4">
-
-                        <div class="bg-slate-50 p-5 border border-slate-200 rounded flex items-start gap-4">
-                            <div class="edu-logo"><img src="assets/logos/AEBM.png" alt="Logo AEBM" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-baseline mb-1 flex-wrap gap-1">
-                                    <h4 class="font-display font-bold text-sm text-navy">Président du conseil de suivi</h4>
-                                    <span class="font-mono text-xs text-slate-400 whitespace-nowrap">Sept. 2025 – Sept. 2026</span>
-                                </div>
-                                <p class="font-mono text-xs text-blueprint-blue mb-2">AEBM Tanger (Association des Étudiants et Stagiaires Burkinabè au Maroc)</p>
-                                <p class="text-xs text-slate-500 leading-relaxed">Droits civiques et action sociale.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 p-5 border border-slate-200 rounded flex items-start gap-4">
-                            <div class="edu-logo"><img src="assets/logos/CEI.png" alt="Logo CEI-FST-Tanger" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-baseline mb-1 flex-wrap gap-1">
-                                    <h4 class="font-display font-bold text-sm text-navy">Responsable en Charge des Affaires Sociales, Culturelles, Sportives, Organisationnelles et Touristiques</h4>
-                                    <span class="font-mono text-xs text-slate-400 whitespace-nowrap">Nov. 2025 – Sept. 2026</span>
-                                </div>
-                                <p class="font-mono text-xs text-blueprint-blue mb-2">Club des Étudiants Internationaux FST-Tanger (CEI-FST-Tanger)</p>
-                                <p class="text-xs text-slate-500 leading-relaxed">Formation.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 p-5 border border-slate-200 rounded flex items-start gap-4">
-                            <div class="edu-logo"><img src="assets/logos/MROD.png" alt="Logo MROD/BF Section Maroc" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-baseline mb-1 flex-wrap gap-1">
-                                    <h4 class="font-display font-bold text-sm text-navy">Chargé à l'organisation interne</h4>
-                                    <span class="font-mono text-xs text-slate-400 whitespace-nowrap">Fév. 2025 – Fév. 2026</span>
-                                </div>
-                                <p class="font-mono text-xs text-blueprint-blue">MROD/BF Section Maroc</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 p-5 border border-slate-200 rounded flex items-start gap-4">
-                            <div class="edu-logo"><img src="assets/logos/CEI.png" alt="Logo CEI-FST-Tanger" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-baseline mb-1 flex-wrap gap-1">
-                                    <h4 class="font-display font-bold text-sm text-navy">Secrétaire général, affaires administratives et estudiantines</h4>
-                                    <span class="font-mono text-xs text-slate-400 whitespace-nowrap">Fév. 2025 – Nov. 2025</span>
-                                </div>
-                                <p class="font-mono text-xs text-blueprint-blue">Club des Étudiants Internationaux FST-Tanger (CEI-FST-Tanger)</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 p-5 border border-slate-200 rounded flex items-start gap-4">
-                            <div class="edu-logo"><img src="assets/logos/AEBM.png" alt="Logo AEBM" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-baseline mb-1 flex-wrap gap-1">
-                                    <h4 class="font-display font-bold text-sm text-navy">Chargé culturel et à la communication</h4>
-                                    <span class="font-mono text-xs text-slate-400 whitespace-nowrap">Sept. 2022 – Sept. 2024</span>
-                                </div>
-                                <p class="font-mono text-xs text-blueprint-blue">AEBM Tanger (Association des Étudiants et Stagiaires Burkinabè au Maroc)</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-50 p-5 border border-slate-200 rounded flex items-start gap-4">
-                            <div class="edu-logo"><img src="assets/logos/CESAM.png" alt="Logo CESAM" onerror="this.parentElement.style.display='none'"></div>
-                            <div class="min-w-0 flex-1">
-                                <div class="flex justify-between items-baseline mb-1 flex-wrap gap-1">
-                                    <h4 class="font-display font-bold text-sm text-navy">Membre actif de la CESAM</h4>
-                                    <span class="font-mono text-xs text-slate-400 whitespace-nowrap">2021 – 2026</span>
-                                </div>
-                                <p class="font-mono text-xs text-blueprint-blue">Confédération des Élèves, Étudiants et Stagiaires Africains Étrangers au Maroc</p>
-                            </div>
+                    <div class="bg-white border border-slate-200 border-l-4 border-l-blueprint-blue p-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-5">
+                        <div class="edu-logo w-16 h-16"><img src="assets/logos/fstt.png" alt="Logo FST Tanger" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <span class="font-mono text-xs text-blueprint-blue font-bold">2024 – 2026</span>
+                            <h3 class="font-display font-bold text-base text-navy mt-1">Diplôme d'Ingénieur — Génie Industriel</h3>
+                            <p class="text-sm text-slate-500 mt-0.5">FST Tanger</p>
                         </div>
                     </div>
-                </div>
 
+                    <div class="bg-white border border-slate-200 border-l-4 border-l-blueprint-blue p-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-5">
+                        <div class="edu-logo w-16 h-16"><img src="assets/logos/fstt.png" alt="Logo FST Tanger" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <span class="font-mono text-xs text-blueprint-blue font-bold">2023 – 2024</span>
+                            <h3 class="font-display font-bold text-base text-navy mt-1">Licence — Génie Méca. Design Ind. &amp; Productique</h3>
+                            <p class="text-sm text-slate-500 mt-0.5">FST Tanger</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 border-l-4 border-l-blueprint-blue p-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-5">
+                        <div class="edu-logo w-16 h-16"><img src="assets/logos/fstt.png" alt="Logo FST Tanger" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <span class="font-mono text-xs text-blueprint-blue font-bold">2021 – 2023</span>
+                            <h3 class="font-display font-bold text-base text-navy mt-1">DEUST — Génie Électrique, Génie Mécanique</h3>
+                            <p class="text-sm text-slate-500 mt-0.5">FST Tanger</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 border-l-4 border-l-blueprint-blue p-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-5">
+                        <div class="edu-logo w-16 h-16"><img src="assets/logos/ltn-asl.png" alt="Logo Lycée Technique National/ASL" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <span class="font-mono text-xs text-blueprint-blue font-bold">2021</span>
+                            <h3 class="font-display font-bold text-base text-navy mt-1">Baccalauréat Fabrication Mécanique</h3>
+                            <p class="text-sm text-slate-500 mt-0.5">Lycée Technique National/ASL, Ouagadougou</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+
+            <!-- Vie associative & Engagement — secondaire, compact -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="font-mono text-xs text-slate-400 tracking-widest uppercase">Engagement</span>
+                    <span class="flex-1 h-px bg-slate-200"></span>
+                </div>
+                <h2 class="text-xl font-bold font-display text-navy mb-6">Vie associative &amp; Engagement</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded flex items-start gap-3">
+                        <div class="edu-logo w-9 h-9"><img src="assets/logos/AEBM.png" alt="Logo AEBM" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-display font-bold text-xs text-navy leading-snug">Président du conseil de suivi</h4>
+                            <p class="font-mono text-[11px] text-blueprint-blue mt-0.5">AEBM Tanger</p>
+                            <p class="font-mono text-[10px] text-slate-400 mt-0.5">Sept. 2025 – Sept. 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded flex items-start gap-3">
+                        <div class="edu-logo w-9 h-9"><img src="assets/logos/CEI.png" alt="Logo CEI-FST-Tanger" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-display font-bold text-xs text-navy leading-snug">Responsable Affaires Sociales, Culturelles &amp; Sportives</h4>
+                            <p class="font-mono text-[11px] text-blueprint-blue mt-0.5">CEI-FST-Tanger</p>
+                            <p class="font-mono text-[10px] text-slate-400 mt-0.5">Nov. 2025 – Sept. 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded flex items-start gap-3">
+                        <div class="edu-logo w-9 h-9"><img src="assets/logos/MROD.png" alt="Logo MROD/BF Section Maroc" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-display font-bold text-xs text-navy leading-snug">Chargé à l'organisation interne</h4>
+                            <p class="font-mono text-[11px] text-blueprint-blue mt-0.5">MROD/BF Section Maroc</p>
+                            <p class="font-mono text-[10px] text-slate-400 mt-0.5">Fév. 2025 – Fév. 2026</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded flex items-start gap-3">
+                        <div class="edu-logo w-9 h-9"><img src="assets/logos/CEI.png" alt="Logo CEI-FST-Tanger" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-display font-bold text-xs text-navy leading-snug">Secrétaire général</h4>
+                            <p class="font-mono text-[11px] text-blueprint-blue mt-0.5">CEI-FST-Tanger</p>
+                            <p class="font-mono text-[10px] text-slate-400 mt-0.5">Fév. 2025 – Nov. 2025</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded flex items-start gap-3">
+                        <div class="edu-logo w-9 h-9"><img src="assets/logos/AEBM.png" alt="Logo AEBM" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-display font-bold text-xs text-navy leading-snug">Chargé culturel et à la communication</h4>
+                            <p class="font-mono text-[11px] text-blueprint-blue mt-0.5">AEBM Tanger</p>
+                            <p class="font-mono text-[10px] text-slate-400 mt-0.5">Sept. 2022 – Sept. 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-4 border border-slate-200 rounded flex items-start gap-3">
+                        <div class="edu-logo w-9 h-9"><img src="assets/logos/CESAM.png" alt="Logo CESAM" onerror="this.parentElement.style.display='none'"></div>
+                        <div class="min-w-0 flex-1">
+                            <h4 class="font-display font-bold text-xs text-navy leading-snug">Membre actif de la CESAM</h4>
+                            <p class="font-mono text-[11px] text-blueprint-blue mt-0.5">Confédération des Élèves, Étudiants et Stagiaires Africains Étrangers au Maroc</p>
+                            <p class="font-mono text-[10px] text-slate-400 mt-0.5">2021 – 2026</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -825,8 +753,8 @@
 
                 <div class="tech-brackets bg-white border border-slate-200 p-6 rounded-lg">
                     <div class="bl"></div><div class="br"></div>
-                    <div class="w-full aspect-[4/3] rounded overflow-hidden bg-slate-100 mb-4 border border-slate-200">
-                        <img src="assets/distinctions/prix-excellence.jpg" alt="Prix d'excellence présidentielle d'Abdoul Aziz Zabre" class="w-full h-full object-cover" onerror="this.closest('div.aspect-\\[4\\/3\\]').style.display='none'">
+                    <div class="w-full aspect-[4/3] rounded overflow-hidden bg-slate-100 mb-4 border border-slate-200 flex items-center justify-center">
+                        <img src="assets/distinctions/prix-excellence.jpg" alt="Prix d'excellence présidentielle d'Abdoul Aziz Zabre" class="w-full h-full object-cover object-top" onerror="this.closest('div.aspect-\\[4\\/3\\]').style.display='none'">
                     </div>
                     <h4 class="font-display font-bold text-sm text-navy mb-1">Prix d'excellence présidentielle</h4>
                     <span class="font-mono text-xs text-blueprint-blue">2021</span>
@@ -834,11 +762,12 @@
 
                 <div class="tech-brackets bg-white border border-slate-200 p-6 rounded-lg">
                     <div class="bl"></div><div class="br"></div>
-                    <div class="w-full aspect-[4/3] rounded overflow-hidden bg-slate-100 mb-4 border border-slate-200">
-                        <img src="assets/distinctions/bourse-amci.jpg" alt="Bourse AMCI d'Abdoul Aziz Zabre" class="w-full h-full object-cover" onerror="this.closest('div.aspect-\\[4\\/3\\]').style.display='none'">
+                    <div class="w-full aspect-[4/3] rounded overflow-hidden bg-slate-100 mb-4 border border-slate-200 flex items-center justify-center">
+                        <img src="assets/distinctions/bourse-amci.jpg" alt="Bourse AMCI d'Abdoul Aziz Zabre" class="w-full h-full object-cover object-top" onerror="this.closest('div.aspect-\\[4\\/3\\]').style.display='none'">
                     </div>
                     <h4 class="font-display font-bold text-sm text-navy mb-1">Bourse AMCI</h4>
-                    <span class="font-mono text-xs text-blueprint-blue">Agence Marocaine de Coopération Internationale</span>
+                    <span class="font-mono text-xs text-blueprint-blue block">Agence Marocaine de Coopération Internationale</span>
+                    <span class="font-mono text-xs text-slate-400">2021 – 2026</span>
                 </div>
 
             </div>
