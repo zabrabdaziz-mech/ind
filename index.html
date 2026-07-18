@@ -132,7 +132,7 @@
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs text-slate-500 bg-slate-50 p-4 border border-slate-200 rounded">
                         <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blueprint-blue"></span><span>Localisation : Tanger, Maroc</span></div>
-                        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blueprint-blue"></span><a href="tel:+212688678016" class="hover:underline">+212 688 678 016</a></div>
+                        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blueprint-blue"></span><div class="flex flex-col gap-0.5"><a href="tel:+212688678016" class="hover:underline">+212 688 678 016 (MA)</a><a href="tel:+22676269187" class="hover:underline">+226 76 26 91 87 (BF)</a></div></div>
                         <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blueprint-blue"></span><span>Email : zabrabdaziz@gmail.com</span></div>
                         <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blueprint-blue"></span><span>Spécialité : Production, Qualité, Lean</span></div>
                     </div>
@@ -153,10 +153,10 @@
                 </div>
 
                 <div class="lg:col-span-5 flex flex-col items-center justify-center">
-                    <div class="tech-brackets p-6 max-w-[280px] w-full transition-all">
+                    <div class="tech-brackets p-6 max-w-[360px] w-full transition-all">
                         <div class="bl"></div><div class="br"></div>
                         <div class="aspect-square w-full rounded-full overflow-hidden border-2 border-blueprint-blue bg-slate-100 shadow-inner relative group">
-                            <img src="assets/photo.jpg" alt="Abdoul Aziz Zabre" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            <img src="assets/photo.jpg" alt="Abdoul Aziz Zabre" class="w-full h-full object-cover object-[50%_20%] scale-[1.6] transition-transform duration-500 group-hover:scale-[1.7]"
                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%23003A5C\'/%3E%3Ctext x=\'100\' y=\'115\' font-family=\'Space Grotesk,sans-serif\' font-weight=\'bold\' font-size=\'48\' fill=\'%230066B3\' text-anchor=\'middle\'%3EAZ%3C/text%3E%3C/svg%3E'">
                         </div>
                     </div>
@@ -749,7 +749,7 @@
     <section id="distinctions" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-bold font-display text-navy mb-10">Distinctions</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl">
 
                 <div class="tech-brackets bg-white border border-slate-200 p-6 rounded-lg">
                     <div class="bl"></div><div class="br"></div>
@@ -770,6 +770,16 @@
                     <span class="font-mono text-xs text-slate-400">2021 – 2026</span>
                 </div>
 
+                <div class="tech-brackets bg-white border border-slate-200 p-6 rounded-lg">
+                    <div class="bl"></div><div class="br"></div>
+                    <div class="w-full aspect-[4/3] rounded overflow-hidden bg-slate-100 mb-4 border border-slate-200 flex items-center justify-center">
+                        <img src="assets/distinctions/prix-aebm.jpg" alt="Prix d'engagement AEBM Tanger d'Abdoul Aziz Zabre" class="w-full h-full object-cover object-top" onerror="this.closest('div.aspect-\\[4\\/3\\]').style.display='none'">
+                    </div>
+                    <h4 class="font-display font-bold text-sm text-navy mb-1">Prix d'engagement associatif</h4>
+                    <span class="font-mono text-xs text-blueprint-blue block">AEBM Tanger — Association des Étudiants Burkinabè du Maroc</span>
+                    <span class="font-mono text-xs text-slate-400">2026</span>
+                </div>
+
             </div>
         </div>
     </section>
@@ -787,10 +797,13 @@
                     <span class="text-slate-400 group-hover:text-blueprint-blue">Email</span>
                     <span class="text-sm font-bold text-navy">zabrabdaziz@gmail.com</span>
                 </a>
-                <a href="tel:+212688678016" class="p-4 border border-slate-200 bg-white hover:border-blueprint-blue transition-all rounded flex flex-col items-center justify-center gap-2 group">
-                    <span class="text-slate-400 group-hover:text-blueprint-blue">Téléphone</span>
-                    <span class="text-sm font-bold text-navy">+212 688 678 016</span>
-                </a>
+                <div class="p-4 border border-slate-200 bg-white rounded flex flex-col items-center justify-center gap-2">
+                    <span class="text-slate-400">Téléphone</span>
+                    <div class="flex flex-col gap-1 text-sm font-bold text-navy items-center">
+                        <a href="tel:+212688678016" class="hover:text-blueprint-blue transition-colors">+212 688 678 016 (MA)</a>
+                        <a href="tel:+22676269187" class="hover:text-blueprint-blue transition-colors">+226 76 26 91 87 (BF)</a>
+                    </div>
+                </div>
                 <a href="https://linkedin.com/in/zaaziz-ing-gi/" target="_blank" rel="noopener" class="p-4 border border-slate-200 bg-white hover:border-blueprint-blue transition-all rounded flex flex-col items-center justify-center gap-2 group">
                     <span class="text-slate-400 group-hover:text-blueprint-blue">LinkedIn</span>
                     <span class="text-sm font-bold text-navy font-sans">zaaziz-ing-gi ↗</span>
