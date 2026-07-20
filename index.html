@@ -146,6 +146,18 @@
 
         .edu-logo { width: 52px; height: 52px; flex: none; border-radius: 8px; border: 1px solid #D7E3EE; background: #fff; display: flex; align-items: center; justify-content: center; padding: 7px; overflow: hidden; }
         .edu-logo img { width: 100%; height: 100%; object-fit: contain; }
+
+        /* Carrousel horizontal (Projets & Certifications) */
+        .carousel-container{ -ms-overflow-style:none; scrollbar-width:none; scroll-behavior:smooth; }
+        .carousel-container::-webkit-scrollbar{ display:none; }
+        .carousel-arrow{
+            width:44px; height:44px; flex:none; border-radius:999px;
+            background:#fff; border:1px solid #D7E3EE; color:#003A5C;
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:0 4px 14px rgba(0,58,92,0.08);
+            transition: border-color .2s ease, color .2s ease, transform .2s ease;
+        }
+        .carousel-arrow:hover{ border-color:#0066B3; color:#0066B3; transform: translateY(-2px); }
     </style>
 </head>
 
@@ -223,20 +235,12 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
                     <div class="lg:col-span-7 space-y-8">
-                        <div class="hero-fade-item d1 inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-blueprint-blue/20 text-blueprint-blue px-4 py-1.5 rounded-full font-mono text-[10px] font-bold tracking-widest uppercase shadow-sm">
-                            <span class="relative flex h-2 w-2">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blueprint-blue opacity-75"></span>
-                              <span class="relative inline-flex rounded-full h-2 w-2 bg-blueprint-blue"></span>
-                            </span>
-                            Ingénieur Junior • Disponible 2026
-                        </div>
-
                         <div class="space-y-4">
-                            <h1 class="hero-fade-item d2 text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-navy leading-[0.85] font-display uppercase">
+                            <h1 class="hero-fade-item d1 text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight text-navy leading-[0.85] font-display uppercase">
                                 Abdoul Aziz <br><span class="text-blueprint-blue bg-clip-text text-transparent bg-gradient-to-r from-blueprint-blue to-cyan-600">Zabre</span>
                             </h1>
                             <p class="hero-fade-item d2 font-mono text-sm sm:text-base text-slate-500 font-medium tracking-wide border-l-2 border-blueprint-blue pl-4">
-                                Ingénieur Génie Industriel // FST Tanger
+                                Ingénieur Génie Industriel
                             </p>
                         </div>
 
@@ -302,7 +306,7 @@
                         <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase">Origines &amp; Vision</span>
                         <span class="w-10 h-0.5 bg-blueprint-blue"></span>
                     </div>
-                    <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Genèse d'une passion</h2>
+                    <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">À propos</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
@@ -489,106 +493,91 @@
 
         <!-- EXPERIENCES -->
         <section id="experiences" class="py-24 reveal">
-            <div class="max-w-4xl mx-auto px-6">
+            <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Expériences</span>
                     <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Parcours Terrain</h2>
                 </div>
 
-                <div class="relative border-l-2 border-blueprint-blue/20 pl-6 md:pl-10 ml-4 space-y-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                    <div class="relative group">
-                        <div class="absolute -left-[30px] md:-left-[46px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-blueprint-blue shadow-[0_0_0_3px_rgba(0,102,179,0.1)] group-hover:scale-125 transition-transform"></div>
-                        <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-blueprint-blue/40 transition-colors">
-                            <span class="font-mono text-[10px] font-bold text-white bg-navy px-3 py-1 rounded-full mb-3 inline-block shadow-sm">FÉV 2026 – JUIN 2026</span>
-                            <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight mb-4">Ingénieur Stagiaire PFE <br><span class="text-blueprint-blue">Maintenance &amp; Production</span></h3>
-                            <div class="flex items-center gap-3 mb-6 text-sm text-slate-500">
-                                <div class="logo-badge"><img src="assets/logos/valeo.png" alt="Valeo" onerror="this.parentElement.innerHTML='<span class=\'font-black text-navy\'>V</span>'"></div>
-                                <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Valeo Vision Tanger</span><span class="font-mono text-[10px]">Tanger, Maroc</span></div>
-                            </div>
-                            <ul class="list-none space-y-2.5 text-slate-600 text-[15px] font-light mb-6">
-                                <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span>Assuré la maintenance préventive et curative sur les équipements de production.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span><strong>Optimisation du MTTR :</strong> conception et déploiement de <em>ChatMaint</em>, outil d'aide au diagnostic basé sur un RAG local Python.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span>Réalisé l'inspection et le diagnostic des pannes pour limiter les arrêts de ligne.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span>Contribué à la fiabilisation des process en environnement de production automobile.</li>
-                            </ul>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-50 border border-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">GMAO</span>
-                                <span class="bg-blue-50 border border-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">RAG LOCAL</span>
-                                <span class="bg-blue-50 border border-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">PYTHON</span>
-                            </div>
+                    <div class="glass-card tilt-3d rounded-2xl p-6 hover:border-blueprint-blue/40 transition-colors">
+                        <span class="font-mono text-[10px] font-bold text-white bg-navy px-3 py-1 rounded-full mb-3 inline-block shadow-sm">FÉV 2026 – JUIN 2026</span>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight mb-4">Ingénieur Stagiaire PFE <br><span class="text-blueprint-blue">Maintenance &amp; Production</span></h3>
+                        <div class="flex items-center gap-3 mb-5 text-sm text-slate-500">
+                            <div class="logo-badge"><img src="assets/logos/valeo.png" alt="Valeo" onerror="this.parentElement.innerHTML='<span class=\'font-black text-navy\'>V</span>'"></div>
+                            <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Valeo Vision Tanger</span><span class="font-mono text-[10px]">Tanger, Maroc</span></div>
+                        </div>
+                        <ul class="list-none space-y-2 text-slate-600 text-sm font-light mb-5">
+                            <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span>Assuré la maintenance préventive et curative sur les équipements de production.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span><strong>Optimisation du MTTR :</strong> conception et déploiement de <em>ChatMaint</em>, outil d'aide au diagnostic basé sur un RAG local Python.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span>Réalisé l'inspection et le diagnostic des pannes pour limiter les arrêts de ligne.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-blueprint-blue font-bold">▹</span>Contribué à la fiabilisation des process en environnement de production automobile.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-50 border border-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">GMAO</span>
+                            <span class="bg-blue-50 border border-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">RAG LOCAL</span>
+                            <span class="bg-blue-50 border border-blue-100 text-blue-700 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">PYTHON</span>
                         </div>
                     </div>
 
-                    <div class="relative group">
-                        <div class="absolute -left-[30px] md:-left-[46px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-slate-300 group-hover:bg-navy transition-colors"></div>
-                        <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-slate-300 transition-colors">
-                            <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">AOÛT 2025 – SEPT 2025</span>
-                            <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight mb-4">Stagiaire Ingénieur <br><span class="text-slate-500">Maintenance &amp; Qualité</span></h3>
-                            <div class="flex items-center gap-3 mb-6 text-sm text-slate-500">
-                                <div class="logo-badge bg-slate-50"><img src="assets/logos/base-aerienne-511.png" alt="Base Aérienne 511" onerror="this.parentElement.innerHTML='<span class=\'material-symbols-outlined font-black text-slate-400\'>flight</span>'"></div>
-                                <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Base Aérienne 511 (EMA)</span><span class="font-mono text-[10px]">Ouagadougou, Burkina Faso</span></div>
-                            </div>
-                            <ul class="list-none space-y-2.5 text-slate-600 text-[15px] font-light mb-6">
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Réalisé des inspections visuelles et contrôles techniques sur aéronefs.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Contribué aux opérations de maintenance préventive et corrective.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Participé aux tests et diagnostics des systèmes mécaniques, électriques et hydrauliques.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Créé un outil <strong>GMAO sous Excel/VBA</strong> pour la planification et la traçabilité des interventions.</li>
-                            </ul>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-slate-100 border border-slate-200 text-slate-600 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">AÉRONAUTIQUE</span>
-                                <span class="bg-slate-100 border border-slate-200 text-slate-600 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">EXCEL / VBA</span>
-                            </div>
+                    <div class="glass-card tilt-3d rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                        <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">AOÛT 2025 – SEPT 2025</span>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight mb-4">Stagiaire Ingénieur <br><span class="text-slate-500">Maintenance &amp; Qualité</span></h3>
+                        <div class="flex items-center gap-3 mb-5 text-sm text-slate-500">
+                            <div class="logo-badge bg-slate-50"><img src="assets/logos/base-aerienne-511.png" alt="Base Aérienne 511" onerror="this.parentElement.innerHTML='<span class=\'material-symbols-outlined font-black text-slate-400\'>flight</span>'"></div>
+                            <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Base Aérienne 511 (EMA)</span><span class="font-mono text-[10px]">Ouagadougou, Burkina Faso</span></div>
+                        </div>
+                        <ul class="list-none space-y-2 text-slate-600 text-sm font-light mb-5">
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Réalisé des inspections visuelles et contrôles techniques sur aéronefs.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Contribué aux opérations de maintenance préventive et corrective.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Participé aux tests et diagnostics des systèmes mécaniques, électriques et hydrauliques.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Créé un outil <strong>GMAO sous Excel/VBA</strong> pour la planification et la traçabilité des interventions.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-100 border border-slate-200 text-slate-600 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">AÉRONAUTIQUE</span>
+                            <span class="bg-slate-100 border border-slate-200 text-slate-600 px-2 py-1 rounded text-[10px] font-mono font-bold uppercase">EXCEL / VBA</span>
                         </div>
                     </div>
 
-                    <div class="relative group">
-                        <div class="absolute -left-[30px] md:-left-[46px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-slate-300 group-hover:bg-navy transition-colors"></div>
-                        <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-slate-300 transition-colors">
-                            <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">AVRIL 2024 – JUIN 2024</span>
-                            <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight mb-4">Stagiaire Technicien <br><span class="text-slate-500">Conception Mécanique</span></h3>
-                            <div class="flex items-center gap-3 mb-6 text-sm text-slate-500">
-                                <div class="logo-badge bg-slate-50"><img src="assets/logos/sara-technologies.png" alt="Sara Technologies" onerror="this.parentElement.innerHTML='<span class=\'font-black text-slate-400\'>ST</span>'"></div>
-                                <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Sara Technologies</span><span class="font-mono text-[10px]">Tanger, Maroc</span></div>
-                            </div>
-                            <ul class="list-none space-y-2.5 text-slate-600 text-[15px] font-light mb-0">
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Conçu et modélisé en 3D des pièces industrielles (SolidWorks, CATIA).</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Réalisé le passage du fichier CAO à la pièce finale via impression 3D FDM, avec contrôle dimensionnel.</li>
-                            </ul>
+                    <div class="glass-card tilt-3d rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                        <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">AVRIL 2024 – JUIN 2024</span>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight mb-4">Stagiaire Technicien <br><span class="text-slate-500">Conception Mécanique</span></h3>
+                        <div class="flex items-center gap-3 mb-5 text-sm text-slate-500">
+                            <div class="logo-badge bg-slate-50"><img src="assets/logos/sara-technologies.png" alt="Sara Technologies" onerror="this.parentElement.innerHTML='<span class=\'font-black text-slate-400\'>ST</span>'"></div>
+                            <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Sara Technologies</span><span class="font-mono text-[10px]">Tanger, Maroc</span></div>
                         </div>
+                        <ul class="list-none space-y-2 text-slate-600 text-sm font-light mb-0">
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Conçu et modélisé en 3D des pièces industrielles (SolidWorks, CATIA).</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Réalisé le passage du fichier CAO à la pièce finale via impression 3D FDM, avec contrôle dimensionnel.</li>
+                        </ul>
                     </div>
 
-                    <div class="relative group">
-                        <div class="absolute -left-[30px] md:-left-[46px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-slate-300 group-hover:bg-navy transition-colors"></div>
-                        <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-slate-300 transition-colors">
-                            <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">JUIN 2023 – AOÛT 2023</span>
-                            <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight mb-4">Technicien <br><span class="text-slate-500">Conception Mécanique</span></h3>
-                            <div class="flex items-center gap-3 mb-6 text-sm text-slate-500">
-                                <div class="logo-badge bg-slate-50"><img src="assets/logos/bs-technique.png" alt="BS Technique" onerror="this.parentElement.innerHTML='<span class=\'font-black text-slate-400\'>BS</span>'"></div>
-                                <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">BS Technique</span><span class="font-mono text-[10px]">Tanger, Maroc</span></div>
-                            </div>
-                            <ul class="list-none space-y-2.5 text-slate-600 text-[15px] font-light mb-0">
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Participé à la fabrication de machines et équipements pour l'industrie.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Réalisé l'installation, le montage et la maintenance industrielle d'équipements.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Contribué à l'étude, la réalisation et l'exécution de travaux mécaniques.</li>
-                            </ul>
+                    <div class="glass-card tilt-3d rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                        <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">JUIN 2023 – AOÛT 2023</span>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight mb-4">Technicien <br><span class="text-slate-500">Conception Mécanique</span></h3>
+                        <div class="flex items-center gap-3 mb-5 text-sm text-slate-500">
+                            <div class="logo-badge bg-slate-50"><img src="assets/logos/bs-technique.png" alt="BS Technique" onerror="this.parentElement.innerHTML='<span class=\'font-black text-slate-400\'>BS</span>'"></div>
+                            <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">BS Technique</span><span class="font-mono text-[10px]">Tanger, Maroc</span></div>
                         </div>
+                        <ul class="list-none space-y-2 text-slate-600 text-sm font-light mb-0">
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Participé à la fabrication de machines et équipements pour l'industrie.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Réalisé l'installation, le montage et la maintenance industrielle d'équipements.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Contribué à l'étude, la réalisation et l'exécution de travaux mécaniques.</li>
+                        </ul>
                     </div>
 
-                    <div class="relative group">
-                        <div class="absolute -left-[30px] md:-left-[46px] top-1.5 w-4 h-4 rounded-full border-4 border-white bg-slate-300 group-hover:bg-navy transition-colors"></div>
-                        <div class="glass-card rounded-2xl p-6 md:p-8 hover:border-slate-300 transition-colors">
-                            <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">MAI 2020 – AOÛT 2020</span>
-                            <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight mb-4">Ouvrier de <br><span class="text-slate-500">Production</span></h3>
-                            <div class="flex items-center gap-3 mb-6 text-sm text-slate-500">
-                                <div class="logo-badge bg-slate-50"><img src="assets/logos/globlex.png" alt="Globlex Construction" onerror="this.parentElement.innerHTML='<span class=\'font-black text-slate-400\'>G</span>'"></div>
-                                <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Globlex Construction</span><span class="font-mono text-[10px]">Ouagadougou, Burkina Faso</span></div>
-                            </div>
-                            <ul class="list-none space-y-2.5 text-slate-600 text-[15px] font-light mb-0">
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Assuré la lubrification des boulons des matrices de moulage des dalles préfabriquées.</li>
-                                <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Préparé les moules pour le coulage du béton, dans le respect des cadences de production.</li>
-                            </ul>
+                    <div class="glass-card tilt-3d rounded-2xl p-6 hover:border-slate-300 transition-colors md:col-span-2">
+                        <span class="font-mono text-[10px] font-bold text-slate-600 bg-slate-200 px-3 py-1 rounded-full mb-3 inline-block">MAI 2020 – AOÛT 2020</span>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight mb-4">Ouvrier de <br><span class="text-slate-500">Production</span></h3>
+                        <div class="flex items-center gap-3 mb-5 text-sm text-slate-500">
+                            <div class="logo-badge bg-slate-50"><img src="assets/logos/globlex.png" alt="Globlex Construction" onerror="this.parentElement.innerHTML='<span class=\'font-black text-slate-400\'>G</span>'"></div>
+                            <div class="flex flex-col"><span class="font-bold text-slate-700 uppercase tracking-wide">Globlex Construction</span><span class="font-mono text-[10px]">Ouagadougou, Burkina Faso</span></div>
                         </div>
+                        <ul class="list-none space-y-2 text-slate-600 text-sm font-light mb-0">
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Assuré la lubrification des boulons des matrices de moulage des dalles préfabriquées.</li>
+                            <li class="relative pl-5"><span class="absolute left-0 text-slate-400 font-bold">▹</span>Préparé les moules pour le coulage du béton, dans le respect des cadences de production.</li>
+                        </ul>
                     </div>
 
                 </div>
@@ -596,82 +585,100 @@
         </section>
 
         <!-- PROJETS ACADÉMIQUES -->
-        <section id="projets" class="py-24 hatch-bg border-y border-slate-200/60 reveal">
+        <section id="projets" class="py-24 hatch-bg border-y border-slate-200/60 reveal" x-data="{}">
             <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Réalisations</span>
-                    <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Projets Académiques</h2>
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-6">
+                    <div>
+                        <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Réalisations</span>
+                        <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Projets Académiques</h2>
+                    </div>
+                    <div class="flex items-center gap-3 flex-none">
+                        <button @click="$refs.projectsCarousel.scrollBy({ left: -360, behavior: 'smooth' })" class="carousel-arrow" aria-label="Précédent">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button @click="$refs.projectsCarousel.scrollBy({ left: 360, behavior: 'smooth' })" class="carousel-arrow" aria-label="Suivant">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div x-ref="projectsCarousel" class="carousel-container flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4">
 
-                    <div class="tech-brackets glass-card tilt-3d p-8 rounded-3xl group overflow-hidden relative">
+                    <div class="tech-brackets glass-card tilt-3d rounded-3xl group overflow-hidden relative snap-start shrink-0 w-[320px] sm:w-[380px]">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="absolute -right-12 -top-12 w-48 h-48 bg-blueprint-blue/10 rounded-full blur-3xl group-hover:bg-blueprint-blue/20 group-hover:scale-150 transition-all duration-700"></div>
-                        <div class="relative z-10">
+                        <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                            <img src="assets/projet/rehabilitation-atelier-fstt.jpg" alt="Réhabilitation atelier FSTT" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.closest('.w-full.aspect-\\[16\\/10\\]').style.display='none'">
+                        </div>
+                        <div class="p-7 relative">
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blueprint-blue to-cyan-600 text-white flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[28px]">factory</span></div>
-                                <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight">Réhabilitation<br>Atelier FSTT</h3>
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blueprint-blue to-cyan-600 text-white flex items-center justify-center shadow-lg flex-none"><span class="material-symbols-outlined text-[24px]">factory</span></div>
+                                <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight">Réhabilitation<br>Atelier FSTT</h3>
                             </div>
                             <div class="fcf fcf-amber mb-4 bg-white/50 backdrop-blur">
                                 <div class="fcf-cell fcf-icon"><span class="material-symbols-outlined text-sm">query_stats</span></div>
                                 <div class="fcf-cell fcf-code !bg-transparent">LEAN / 5S / DIAGNOSTIC</div>
                             </div>
-                            <p class="text-slate-600 text-[15px] font-light leading-relaxed mb-0">
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-0">
                                 Diagnostic et plan d'action lean pour la modernisation de l'atelier mécanique de la FST Tanger.
                             </p>
                         </div>
                     </div>
 
-                    <div class="tech-brackets glass-card tilt-3d p-8 rounded-3xl group overflow-hidden relative">
+                    <div class="tech-brackets glass-card tilt-3d rounded-3xl group overflow-hidden relative snap-start shrink-0 w-[320px] sm:w-[380px]">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="absolute -right-12 -top-12 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl group-hover:bg-orange-500/20 group-hover:scale-150 transition-all duration-700"></div>
-                        <div class="relative z-10">
+                        <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                            <img src="assets/projet/systeme-suivi-excel-vba.jpg" alt="Système de suivi Excel/VBA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.closest('.w-full.aspect-\\[16\\/10\\]').style.display='none'">
+                        </div>
+                        <div class="p-7 relative">
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 text-white flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[28px]">table_view</span></div>
-                                <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight">Système de suivi<br>Excel / VBA</h3>
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 text-white flex items-center justify-center shadow-lg flex-none"><span class="material-symbols-outlined text-[24px]">table_view</span></div>
+                                <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight">Système de suivi<br>Excel / VBA</h3>
                             </div>
                             <div class="fcf fcf-orange mb-4 bg-white/50 backdrop-blur">
                                 <div class="fcf-cell fcf-icon"><span class="material-symbols-outlined text-sm">code</span></div>
                                 <div class="fcf-cell fcf-code !bg-transparent">EXCEL / VBA / GMAO</div>
                             </div>
-                            <p class="text-slate-600 text-[15px] font-light leading-relaxed mb-0">
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-0">
                                 Outil de planification et de traçabilité de la maintenance développé sous Excel/VBA.
                             </p>
                         </div>
                     </div>
 
-                    <div class="tech-brackets glass-card tilt-3d p-8 rounded-3xl group overflow-hidden relative">
+                    <div class="tech-brackets glass-card tilt-3d rounded-3xl group overflow-hidden relative snap-start shrink-0 w-[320px] sm:w-[380px]">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="absolute -right-12 -top-12 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 group-hover:scale-150 transition-all duration-700"></div>
-                        <div class="relative z-10">
+                        <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                            <img src="assets/projet/machine-recyclage-pet.jpg" alt="Machine de recyclage PET" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.closest('.w-full.aspect-\\[16\\/10\\]').style.display='none'">
+                        </div>
+                        <div class="p-7 relative">
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[28px]">recycling</span></div>
-                                <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight">Machine de<br>Recyclage PET</h3>
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-lg flex-none"><span class="material-symbols-outlined text-[24px]">recycling</span></div>
+                                <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight">Machine de<br>Recyclage PET</h3>
                             </div>
                             <div class="fcf fcf-emerald mb-4 bg-white/50 backdrop-blur">
                                 <div class="fcf-cell fcf-icon"><span class="material-symbols-outlined text-sm">square_foot</span></div>
                                 <div class="fcf-cell fcf-code !bg-transparent">SOLIDWORKS / SIMULATION</div>
                             </div>
-                            <p class="text-slate-600 text-[15px] font-light leading-relaxed mb-0">
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-0">
                                 Conception et modélisation d'une machine de recyclage de bouteilles, validée en simulation.
                             </p>
                         </div>
                     </div>
 
-                    <div class="tech-brackets glass-card tilt-3d p-8 rounded-3xl group overflow-hidden relative">
+                    <div class="tech-brackets glass-card tilt-3d rounded-3xl group overflow-hidden relative snap-start shrink-0 w-[320px] sm:w-[380px]">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="absolute -right-12 -top-12 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 group-hover:scale-150 transition-all duration-700"></div>
-                        <div class="relative z-10">
+                        <div class="w-full aspect-[16/10] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                            <img src="assets/projet/extrudeuse-3-vis.jpg" alt="Extrudeuse 3 vis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.closest('.w-full.aspect-\\[16\\/10\\]').style.display='none'">
+                        </div>
+                        <div class="p-7 relative">
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 text-white flex items-center justify-center shadow-lg"><span class="material-symbols-outlined text-[28px]">precision_manufacturing</span></div>
-                                <h3 class="font-display font-bold text-2xl text-navy uppercase leading-tight">Extrudeuse<br>3 Vis</h3>
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 text-white flex items-center justify-center shadow-lg flex-none"><span class="material-symbols-outlined text-[24px]">precision_manufacturing</span></div>
+                                <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight">Extrudeuse<br>3 Vis</h3>
                             </div>
                             <div class="fcf fcf-purple mb-4 bg-white/50 backdrop-blur">
                                 <div class="fcf-cell fcf-icon"><span class="material-symbols-outlined text-sm">view_in_ar</span></div>
                                 <div class="fcf-cell fcf-code !bg-transparent">SOLIDWORKS / IMPRESSION 3D</div>
                             </div>
-                            <p class="text-slate-600 text-[15px] font-light leading-relaxed mb-0">
+                            <p class="text-slate-600 text-sm font-light leading-relaxed mb-0">
                                 Développement pour impression 3D et prototypage rapide.
                             </p>
                         </div>
@@ -784,58 +791,109 @@
                 </div>
 
                 <!-- Certifications -->
-                <div id="certifications" class="mb-20">
-                    <h2 class="text-3xl font-black font-display text-navy uppercase mb-8 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-blueprint-blue">military_tech</span>Certifications
-                    </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div id="certifications" class="mb-20" x-data="{}">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-6">
+                        <h2 class="text-3xl font-black font-display text-navy uppercase flex items-center gap-3">
+                            <span class="material-symbols-outlined text-blueprint-blue">military_tech</span>Certifications
+                        </h2>
+                        <div class="flex items-center gap-3 flex-none">
+                            <button @click="$refs.certCarousel.scrollBy({ left: -320, behavior: 'smooth' })" class="carousel-arrow" aria-label="Précédent">
+                                <span class="material-symbols-outlined">arrow_back</span>
+                            </button>
+                            <button @click="$refs.certCarousel.scrollBy({ left: 320, behavior: 'smooth' })" class="carousel-arrow" aria-label="Suivant">
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-emerald-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">FABRICATION ADDITIVE</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Impression 3D</h3>
-                            <p class="text-[10px] font-mono text-emerald-600 font-bold mt-2 tracking-widest">GREENLAB FABLAB TANGER — VALIDÉE SUR PLACE</p>
+                    <div x-ref="certCarousel" class="carousel-container flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4">
+
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/impression-3d.jpg" alt="Attestation de formation à l'impression 3D" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">FABRICATION ADDITIVE</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Impression 3D</h3>
+                                <p class="text-[10px] font-mono text-emerald-600 font-bold mt-2 tracking-widest">GREENLAB FABLAB TANGER — VALIDÉE SUR PLACE</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-blue-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">IA &amp; AGENTIQUE</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">AI Fluency for Students</h3>
-                            <p class="text-[10px] font-mono text-blue-600 font-bold mt-2 tracking-widest">ANTHROPIC — b5h5vx7v2ryy</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/ai-fluency.jpg" alt="AI Fluency for Students" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-blue-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">IA &amp; AGENTIQUE</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">AI Fluency for Students</h3>
+                                <p class="text-[10px] font-mono text-blue-600 font-bold mt-2 tracking-widest">ANTHROPIC — b5h5vx7v2ryy</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-blue-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">IA &amp; AGENTIQUE</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Intro to Agent Skills</h3>
-                            <p class="text-[10px] font-mono text-blue-600 font-bold mt-2 tracking-widest">ANTHROPIC — dsmmsdyoufn3</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/agent-skills.jpg" alt="Introduction to Agent Skills" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-blue-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">IA &amp; AGENTIQUE</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Intro to Agent Skills</h3>
+                                <p class="text-[10px] font-mono text-blue-600 font-bold mt-2 tracking-widest">ANTHROPIC — dsmmsdyoufn3</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-blue-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">IA &amp; AGENTIQUE</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Intro to Subagents</h3>
-                            <p class="text-[10px] font-mono text-blue-600 font-bold mt-2 tracking-widest">ANTHROPIC — 9gtjkbgqverb</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/subagents.jpg" alt="Introduction to Subagents" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-blue-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">IA &amp; AGENTIQUE</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Intro to Subagents</h3>
+                                <p class="text-[10px] font-mono text-blue-600 font-bold mt-2 tracking-widest">ANTHROPIC — 9gtjkbgqverb</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-orange-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">ERP LOGISTIQUE</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">SAP Basics: Query</h3>
-                            <p class="text-[10px] font-mono text-orange-600 font-bold mt-2 tracking-widest">UDEMY</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-orange-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/sap-basics.jpg" alt="SAP Basics: SAP Query" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">ERP LOGISTIQUE</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">SAP Basics: Query</h3>
+                                <p class="text-[10px] font-mono text-orange-600 font-bold mt-2 tracking-widest">UDEMY</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-orange-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">ERP &amp; MANAGEMENT</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Project &amp; Process Management</h3>
-                            <p class="text-[10px] font-mono text-orange-600 font-bold mt-2 tracking-widest">UDEMY (MTF INSTITUTE)</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-orange-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/project-process-management.jpg" alt="Project & Process Management" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-orange-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">ERP &amp; MANAGEMENT</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Project &amp; Process Management</h3>
+                                <p class="text-[10px] font-mono text-orange-600 font-bold mt-2 tracking-widest">UDEMY (MTF INSTITUTE)</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-purple-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-purple-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">CAO &amp; DESSIN</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">AutoCAD MasterClass</h3>
-                            <p class="text-[10px] font-mono text-purple-600 font-bold mt-2 tracking-widest">UDEMY</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-purple-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/autocad-masterclass.jpg" alt="AutoCAD MasterClass" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-purple-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">CAO &amp; DESSIN</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">AutoCAD MasterClass</h3>
+                                <p class="text-[10px] font-mono text-purple-600 font-bold mt-2 tracking-widest">UDEMY</p>
+                            </div>
                         </div>
 
-                        <div class="glass-card p-6 rounded-2xl hover:border-purple-400 hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-purple-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">MODÉLISATION 3D</span></div>
-                            <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Blender Essential</h3>
-                            <p class="text-[10px] font-mono text-purple-600 font-bold mt-2 tracking-widest">UDEMY (LEARNIFY IT)</p>
+                        <div class="glass-card rounded-2xl overflow-hidden hover:border-purple-400 hover:shadow-lg hover:-translate-y-1 transition-all snap-start shrink-0 w-[260px]">
+                            <div class="w-full aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-200/70">
+                                <img src="assets/certifications/blender-essential.jpg" alt="Blender Essential" class="w-full h-full object-cover" onerror="this.closest('.w-full.aspect-\\[4\\/3\\]').style.display='none'">
+                            </div>
+                            <div class="p-5">
+                                <div class="inline-flex items-center gap-2 mb-3"><span class="w-2 h-2 rounded-full bg-purple-500"></span><span class="font-mono text-[9px] font-bold text-slate-500 tracking-wider">MODÉLISATION 3D</span></div>
+                                <h3 class="font-display font-bold text-lg text-navy uppercase leading-tight">Blender Essential</h3>
+                                <p class="text-[10px] font-mono text-purple-600 font-bold mt-2 tracking-widest">UDEMY (LEARNIFY IT)</p>
+                            </div>
                         </div>
 
                     </div>
@@ -936,8 +994,7 @@
             </div>
 
             <div class="font-mono text-[10px] font-bold text-slate-500 uppercase tracking-widest text-center md:text-right">
-                <p>Version du Système — © 2026</p>
-                <p class="mt-1">FST Tanger, Maroc</p>
+                <p>Portfolio — © 2026</p>
             </div>
         </div>
     </footer>
