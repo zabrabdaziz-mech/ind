@@ -161,7 +161,7 @@
     </style>
 </head>
 
-<body x-data="{ mobileMenu: false }" class="font-sans antialiased min-h-screen relative selection:bg-blueprint-blue selection:text-white text-slate-800">
+<body x-data="{ mobileMenu: false, cvModal: false }" class="font-sans antialiased min-h-screen relative selection:bg-blueprint-blue selection:text-white text-slate-800">
 
     <a href="#main-content" class="absolute -top-96 left-4 focus:top-4 bg-blueprint-blue text-white font-mono px-4 py-2 rounded z-50 transition-all text-sm">
         Aller au contenu principal
@@ -187,16 +187,16 @@
                 <nav class="hidden md:flex items-center gap-1 font-mono text-[10px] tracking-widest uppercase" id="desktopNav">
                     <a href="#profil" class="island-link">Profil</a>
                     <a href="#competences" class="island-link">Compétences</a>
-                    <a href="#experiences" class="island-link">Parcours</a>
+                    <a href="#experiences" class="island-link">Expérience Pro</a>
                     <a href="#projets" class="island-link">Projets</a>
                     <a href="#formation" class="island-link">Formation</a>
                 </nav>
 
                 <div class="flex items-center gap-3 flex-none">
-                    <a href="assets/CV_Zabre_Abdoul_Aziz.pdf" download class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] bg-navy text-white px-4 py-2 rounded-full hover:bg-blueprint-blue hover:shadow-lg hover:-translate-y-0.5 transition-all font-bold tracking-wider">
-                        <span class="material-symbols-outlined text-[14px]">download</span>
+                    <button @click="cvModal = true" class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] bg-navy text-white px-4 py-2 rounded-full hover:bg-blueprint-blue hover:shadow-lg hover:-translate-y-0.5 transition-all font-bold tracking-wider">
+                        <span class="material-symbols-outlined text-[14px]">visibility</span>
                         CV
-                    </a>
+                    </button>
                     <a href="#contact" class="hidden lg:inline-flex items-center gap-1.5 font-mono text-[11px] bg-blueprint-blue text-white px-4 py-2 rounded-full hover:bg-navy hover:shadow-lg hover:-translate-y-0.5 transition-all font-bold tracking-wider">
                         CONTACT
                     </a>
@@ -214,7 +214,7 @@
             <nav class="flex flex-col space-y-4 font-mono text-xs uppercase tracking-widest text-navy font-bold">
                 <a @click="mobileMenu = false" href="#profil" class="flex items-center justify-between hover:text-blueprint-blue">À propos <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
                 <a @click="mobileMenu = false" href="#competences" class="flex items-center justify-between hover:text-blueprint-blue">Compétences <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
-                <a @click="mobileMenu = false" href="#experiences" class="flex items-center justify-between hover:text-blueprint-blue">Parcours <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                <a @click="mobileMenu = false" href="#experiences" class="flex items-center justify-between hover:text-blueprint-blue">Expérience Pro <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
                 <a @click="mobileMenu = false" href="#projets" class="flex items-center justify-between hover:text-blueprint-blue">Projets <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
                 <a @click="mobileMenu = false" href="#formation" class="flex items-center justify-between hover:text-blueprint-blue">Formation <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
                 <a @click="mobileMenu = false" href="#certifications" class="flex items-center justify-between hover:text-blueprint-blue">Certifications <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
@@ -257,7 +257,7 @@
                             </div>
                             <div class="flex items-center gap-3 relative z-10">
                                 <span class="icon-chip group-hover:border-blueprint-blue group-hover:bg-blueprint-blue/5"><span class="material-symbols-outlined text-[20px]">mail</span></span>
-                                <a href="mailto:zabrabdaziz@gmail.com" class="font-mono text-[11px] text-slate-600 font-semibold uppercase tracking-wider hover:text-blueprint-blue transition-colors">Contact Email</a>
+                                <a href="mailto:zabrabdaziz@gmail.com" class="font-mono text-[11px] text-slate-600 font-semibold tracking-wider hover:text-blueprint-blue transition-colors">zabrabdaziz@gmail.com</a>
                             </div>
                             <div class="flex items-center gap-3 sm:col-span-2 relative z-10">
                                 <span class="icon-chip group-hover:border-blueprint-blue group-hover:bg-blueprint-blue/5"><span class="material-symbols-outlined text-[20px]">call</span></span>
@@ -301,11 +301,6 @@
         <section id="profil" class="py-24 border-t border-slate-200/60 reveal">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="max-w-4xl mx-auto text-center mb-12">
-                    <div class="inline-flex items-center gap-3 mb-4">
-                        <span class="w-10 h-0.5 bg-blueprint-blue"></span>
-                        <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase">Origines &amp; Vision</span>
-                        <span class="w-10 h-0.5 bg-blueprint-blue"></span>
-                    </div>
                     <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">À propos</h2>
                 </div>
 
@@ -342,7 +337,6 @@
         <section id="competences" class="py-24 hatch-bg border-y border-slate-200/60 reveal relative">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Matrice Technique</span>
                     <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Fiche technique des compétences</h2>
                 </div>
 
@@ -350,10 +344,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#7c3aed">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#7c3aed"><span class="material-symbols-outlined text-[22px]">square_foot</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Conception<br>mécanique</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#7c3aed"><span class="material-symbols-outlined text-[22px]">square_foot</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Conception<br>mécanique</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Modélisation 3D</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Tolérancement GD&amp;T</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Mise en plan ISO</span>
@@ -363,10 +357,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#059669">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#059669"><span class="material-symbols-outlined text-[22px]">conveyor_belt</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Production<br>&amp; Lean</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#059669"><span class="material-symbols-outlined text-[22px]">conveyor_belt</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Production<br>&amp; Lean</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Lean Manufacturing</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Six Sigma</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Kaizen / 5S</span>
@@ -376,10 +370,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#e11d48">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#e11d48"><span class="material-symbols-outlined text-[22px]">verified</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Qualité &amp;<br>Fiabilité</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#e11d48"><span class="material-symbols-outlined text-[22px]">verified</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Qualité &amp;<br>Fiabilité</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">AMDEC</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">SPC / MSP</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Gage R&amp;R</span>
@@ -389,10 +383,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#ea580c">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#ea580c"><span class="material-symbols-outlined text-[22px]">build</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Maintenance<br>&amp; GMAO</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#ea580c"><span class="material-symbols-outlined text-[22px]">build</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Maintenance<br>&amp; GMAO</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Outils GMAO</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Maint. Préventive</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Maint. Curative</span>
@@ -402,10 +396,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#0891b2">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#0891b2"><span class="material-symbols-outlined text-[22px]">local_shipping</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Logistique &amp;<br>Supply Chain</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#0891b2"><span class="material-symbols-outlined text-[22px]">local_shipping</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Logistique &amp;<br>Supply Chain</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Gestion des stocks</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Approvisionnement</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Planification Flux</span>
@@ -414,10 +408,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#B5680B">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#B5680B"><span class="material-symbols-outlined text-[22px]">view_in_ar</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Suite<br>Logicielle</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#B5680B"><span class="material-symbols-outlined text-[22px]">view_in_ar</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Suite<br>Logicielle</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">SolidWorks / CATIA</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">AutoCAD / ANSYS</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">SAP / Odoo</span>
@@ -427,10 +421,10 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#0066B3">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#0066B3"><span class="material-symbols-outlined text-[22px]">smart_toy</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">IA &amp;<br>Digitalisation</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#0066B3"><span class="material-symbols-outlined text-[22px]">smart_toy</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">IA &amp;<br>Digitalisation</h3>
                         <div class="dim-line"></div>
-                        <div class="flex flex-wrap gap-1.5 relative z-10">
+                        <div class="flex flex-wrap gap-1.5 relative z-10 justify-center">
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">RAG local</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Python / C</span>
                             <span class="bg-white border border-slate-200 px-2 py-1 rounded text-[10px] font-mono font-bold text-slate-600 shadow-sm">Prompt Engineering</span>
@@ -439,8 +433,8 @@
 
                     <div class="tech-brackets glass-card tilt-3d p-6 rounded-xl group/card relative overflow-hidden border-t-4" style="border-top-color:#475569">
                         <div class="bl"></div><div class="br"></div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10" style="background:#475569"><span class="material-symbols-outlined text-[22px]">translate</span></div>
-                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10">Compétences<br>Linguistiques</h3>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-sm mb-5 relative z-10 mx-auto" style="background:#475569"><span class="material-symbols-outlined text-[22px]">translate</span></div>
+                        <h3 class="font-display font-bold text-xl text-navy uppercase leading-tight relative z-10 text-center">Compétences<br>Linguistiques</h3>
                         <div class="dim-line"></div>
                         <div class="flex flex-col gap-2.5 font-mono text-xs text-slate-600 relative z-10">
                             <div class="flex justify-between items-center border-b border-slate-200/60 pb-1.5">
@@ -463,7 +457,6 @@
         <section id="experiences" class="py-24 reveal">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Expériences</span>
                     <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Parcours Terrain</h2>
                 </div>
 
@@ -557,8 +550,7 @@
             <div class="max-w-6xl mx-auto px-6">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-10 gap-6">
                     <div>
-                        <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Réalisations</span>
-                        <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Projets Académiques</h2>
+                            <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase">Projets Académiques</h2>
                     </div>
                     <div class="flex items-center gap-3 flex-none">
                         <button @click="$refs.projectsCarousel.scrollBy({ left: -360, behavior: 'smooth' })" class="carousel-arrow" aria-label="Précédent">
@@ -660,7 +652,6 @@
         <section id="formation" class="py-24 reveal relative">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <span class="font-mono text-[10px] font-bold text-blueprint-blue tracking-widest uppercase block mb-3">Formations</span>
                     <h2 class="text-4xl lg:text-5xl font-black font-display text-navy uppercase flex items-center justify-center gap-3">
                         <span class="material-symbols-outlined text-blueprint-blue text-4xl">school</span>Diplômes &amp; Cursus
                     </h2>
@@ -948,10 +939,10 @@
                         <span class="material-symbols-outlined text-[18px] group-hover:text-blueprint-blue transition-colors">link</span>
                         <span class="group-hover:text-blueprint-blue transition-colors">Profil LinkedIn</span>
                     </a>
-                    <a href="assets/CV_Zabre_Abdoul_Aziz.pdf" download class="w-full sm:w-auto px-8 py-4 glass-card hover:bg-white text-navy text-xs font-mono font-bold tracking-widest uppercase rounded-full transition-all flex items-center justify-center gap-2 group">
-                        <span class="material-symbols-outlined text-[18px] group-hover:text-blueprint-blue transition-colors">download</span>
-                        <span class="group-hover:text-blueprint-blue transition-colors">Télécharger le CV</span>
-                    </a>
+                    <button @click="cvModal = true" class="w-full sm:w-auto px-8 py-4 glass-card hover:bg-white text-navy text-xs font-mono font-bold tracking-widest uppercase rounded-full transition-all flex items-center justify-center gap-2 group">
+                        <span class="material-symbols-outlined text-[18px] group-hover:text-blueprint-blue transition-colors">visibility</span>
+                        <span class="group-hover:text-blueprint-blue transition-colors">Voir le CV</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -983,6 +974,65 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modale d'aperçu du CV -->
+    <div
+        x-show="cvModal"
+        x-cloak
+        x-transition:enter="transition ease-out duration-250"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @keydown.escape.window="cvModal = false"
+        class="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-8"
+    >
+        <div @click="cvModal = false" class="absolute inset-0 bg-navy-darker/70 backdrop-blur-sm"></div>
+
+        <div
+            x-show="cvModal"
+            x-transition:enter="transition ease-out duration-250 delay-75"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="relative glass-panel rounded-2xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden shadow-2xl"
+        >
+            <div class="flex items-center justify-between gap-4 px-5 py-3 border-b border-slate-200/70 bg-white/70">
+                <div class="flex items-center gap-2 min-w-0">
+                    <span class="material-symbols-outlined text-blueprint-blue">description</span>
+                    <span class="font-display font-bold text-sm text-navy uppercase tracking-wide truncate">CV — Abdoul Aziz Zabre</span>
+                </div>
+                <div class="flex items-center gap-2 flex-none">
+                    <a href="assets/CV_Zabre_Abdoul_Aziz.pdf" download class="inline-flex items-center gap-1.5 font-mono text-[11px] bg-blueprint-blue text-white px-3.5 py-2 rounded-full hover:bg-navy transition-all font-bold tracking-wider">
+                        <span class="material-symbols-outlined text-[15px]">download</span>
+                        <span class="hidden sm:inline">Télécharger</span>
+                    </a>
+                    <button @click="cvModal = false" class="p-2 rounded-full text-slate-500 hover:text-navy hover:bg-slate-100 transition-colors" aria-label="Fermer l'aperçu">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-slate-100 relative">
+                <iframe
+                    x-show="cvModal"
+                    src="assets/CV_Zabre_Abdoul_Aziz.pdf"
+                    class="w-full h-full border-0"
+                    title="Aperçu du CV d'Abdoul Aziz Zabre"
+                ></iframe>
+                <!-- Repli si l'aperçu intégré ne s'affiche pas (certains navigateurs mobiles) -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 sm:hidden">
+                    <a href="assets/CV_Zabre_Abdoul_Aziz.pdf" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 font-mono text-[11px] bg-navy text-white px-4 py-2 rounded-full shadow-lg">
+                        <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                        Ouvrir dans un nouvel onglet
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
